@@ -3,7 +3,7 @@
 define('APP_NAME', 'simple-app-php');
 
 // Urls
-define('ROOT_URL', 'http://localhost/' . APP_NAME);
+define('ROOT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/' . APP_NAME);
 define('PAGES_URL', ROOT_URL . '/pages');
 define('STATIC_URL', ROOT_URL . '/static');
 

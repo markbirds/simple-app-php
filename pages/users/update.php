@@ -1,14 +1,14 @@
 <?php
 
+session_start();
+
 require($_SERVER['DOCUMENT_ROOT'] . '/simple-app-php/config/define.php');
 
 require(DB_PATH . '/connection.php');
 require(DB_PATH . '/operations.php');
 require(UTILS_PATH . '/functions.php');
 
-session_start();
-
-if ($_SERVER['REQUEST_METHOD'] === "POST") {
+if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_SESSION["user_id"])) {
   $user_id = $_SESSION['user_id'];
   // get form data
   $firstname = validate($conn, $_POST['firstname']);

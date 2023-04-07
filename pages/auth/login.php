@@ -8,7 +8,7 @@ require(UTILS_PATH . '/functions.php');
 session_start();
 
 // if user id in session, redirect to root page
-if ($_SESSION["user_id"]) {
+if (isset($_SESSION["user_id"]) && $_SESSION["user_id"]) {
   header('Location: ' . ROOT_URL);
 }
 
